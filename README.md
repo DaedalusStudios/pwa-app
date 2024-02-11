@@ -36,6 +36,7 @@ WHEN I deploy to Render
 THEN I should have proper build scripts for a webpack application
 ```
 
+[Code is found in the develop folder](https://github.com/DaedalusStudios/pwa-app/tree/main/Develop)
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description
