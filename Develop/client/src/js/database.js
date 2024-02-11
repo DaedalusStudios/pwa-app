@@ -19,7 +19,6 @@ const initdb = async () =>
     const objectStore = tx.objectStore('jate');
     const request = objectStore.put({ id: 1, value: content });
     const result = await request;
-    console.log("Data saved", result);
   }
   
   // TODO: Add logic for a method that gets all the content from the database
@@ -30,7 +29,6 @@ const initdb = async () =>
       const request = objectStore.get(1);
       const result = await request;
       result ? console.log("Date retrieved", result.value) : console.log("data not found");
-      console.log("Data retrieved", result);
       return result?.value;
   
   }
