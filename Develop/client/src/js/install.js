@@ -4,7 +4,7 @@ const butInstall = document.getElementById('buttonInstall');
 // TODO: Add an event handler to the `beforeinstallprompt` event
 window.addEventListener('beforeinstallprompt', (event) => {
     window.deferredPrompt = event;
-    butInstall.style.display = 'block';
+    butInstall.classList.toggle('hidden', false);
 });
 
 // TODO: Implement a click event handler on the `butInstall` element
@@ -17,7 +17,7 @@ butInstall.addEventListener('click', async () => {
     const choiceResult = await event.userChoice;
     if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the A2HS prompt');
-        butInstall.style.display = 'none';
+        butInstall.classList.toggle('hidden', true);
     } else {
         console.log('User dismissed the A2HS prompt');
     }
@@ -26,5 +26,5 @@ butInstall.addEventListener('click', async () => {
 // TODO: Add an handler for the `appinstalled` event
 window.addEventListener('appinstalled', (event) => {
     console.log('JATE Web App was installed', event);
-    butInstall.style.display = 'none';
+    butInstall.classList.toggle('hidden', true);
 });
